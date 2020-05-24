@@ -116,6 +116,12 @@ export default class App extends Component {
             filter
         );
 
+    render() {
+        const { todoData } = this.state;
+        const doneCount = todoData.filter((el) => el.done).length;
+        const todoCount = todoData.length - doneCount;
+
+
         return (
             <div className="todo-app">
                 <AppHeader toDo={todoCount} done={doneCount} />
@@ -129,6 +135,8 @@ export default class App extends Component {
 
                 <TodoList
                     todos={visibleItems}
+                    todos={todoData}
+
                     onDeleted={this.deleteItem}
                     onToggleImortant={this.onToggleImortant}
                     onToggleDone={this.onToggleDone}
