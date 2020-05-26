@@ -128,6 +128,7 @@ export default class App extends Component {
                 </div>
 
                 <TodoList
+
                     todos={visibleItems}
                     onDeleted={this.deleteItem}
                     onToggleImortant={this.onToggleImortant}
